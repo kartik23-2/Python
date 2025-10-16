@@ -1,3 +1,8 @@
+#import 
+import math                     #importing math module or any other if it is in same directory
+from math import sqrt           #importing only specific function from module
+# import sys                                                                                        #importing sys module to get the path of python interpreter
+# sys.path.append('C:\\Users\\Kartik\\AppData\\Local\\Programs\\Python\\Python310\\Lib')            #adding path of module if not in same directory
 
 #CLASS AND OBJECTS
 #----------------------------------------------
@@ -43,3 +48,13 @@ print(stu_3)
 print(stu_3.mail())         #checking mail id of object created using alternative constructor
 
 print(stu_1.__dict__) #to get all the attributes of the object
+
+
+
+
+#File objects
+#----------------------------------------------
+f = open('test.txt', 'r')  #opening file in read mode
+       #OR
+  #CONTEXT MANAGER
+with open('test.txt', 'r') as f:  #using context manager to open     
