@@ -235,3 +235,4 @@ print(odd_list)
 
 total = reduce(lambda x, y: x + y, num)
 print(total)
+#----------------------------------------------
