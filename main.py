@@ -1,4 +1,5 @@
 # #import 
+from functools import reduce       #you have to reduce function from functools module
 # import math                     #importing math module or any other if it is in same directory
 # from math import sqrt       #importing only specific function from module
 # # import sys                                                                                        #importing sys module to get the path of python interpreter
@@ -184,3 +185,53 @@ cities = ['New York', 'Mumbai', 'Paris']
 country = ['USA', 'India', 'France']
 z = zip(cities, country)   #zipping two lists   
 print({city: cnty for city, cnty in z})   #dictionary comprehension
+
+
+
+
+
+#Higher order functions(map, filter, reduce):- functions that take other functions as arguments
+#----------------------------------------------
+
+
+#1)MAP
+#num = [1, 2, 3, 4, 5]
+def cube(n):
+    return n*n*n
+
+# new_list = []
+# for i in num:
+#     new_list.append(cube(i))   #normal way of creating list using function
+# print(new_list)
+
+cubed = list(map(cube, num))     #using map function to create list using function
+print(cubed)
+
+
+
+
+#2)FILTER
+def is_odd(n):
+    return n % 2 != 0
+
+odd_list = list(filter(is_odd, num))   #using filter function to create list of odd numbers
+print(odd_list)
+
+#3)REDUCE
+
+
+def sum(x,y):
+    return x + y
+total = reduce(sum, num)   #using reduce function to get sum of all numbers in list
+print(total)
+
+#OR using lambda functions(all these higher order functions can be used with lambda functions as well for more concise code)
+
+cubed = list(map(lambda x: x*x*x, num))
+print(cubed)
+
+odd_list = list(filter(lambda x: x % 2 != 0, num))
+print(odd_list)
+
+total = reduce(lambda x, y: x + y, num)
+print(total)
