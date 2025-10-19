@@ -152,11 +152,35 @@ print(stu_1.first)      #accessing first name after deleting mail
 #----------------------------------------------
 def square(n):
     for i in n:
-        yield (i * i)   #yield is used to create generator
+        yield (i * i)
+           #yield is used to create generator
 numbers = square([1, 2, 3, 4, 5])
-
 print(next(numbers))  #calling next() to get next value from generator
 print(next(numbers))
 #or
 for num in numbers:
     print(num)
+
+
+#comprehensions
+#----------------------------------------------
+# 
+
+num = [1, 2, 3, 4, 5]
+square_list  = []
+for i in num:
+    square_list.append(i * i)   #normal way of creating list
+print(square_list)
+
+
+
+# squared = [i * i for i in num]      #list comprehension
+# print(squared)   
+ 
+# s= set([1, 2, 3, 4, 5, 1, 2, 5, 6 , 25])
+# print({i for i in s if i % 2 == 0})   #set comprehension to get even numbers
+
+cities = ['New York', 'Mumbai', 'Paris']
+country = ['USA', 'India', 'France']
+z = zip(cities, country)   #zipping two lists   
+print({city: cnty for city, cnty in z})   #dictionary comprehension
